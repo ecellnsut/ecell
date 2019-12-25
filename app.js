@@ -27,6 +27,11 @@ mongoose
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+// to Render static content
+app.use(express.static('static_web', {
+  extensions: ['html', 'htm']
+}));
+
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 
