@@ -4,9 +4,13 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+var forceSsl = require('force-ssl-heroku');
 var path = require("path");
 
 const app = express();
+
+// For ssl on custom Domain
+app.use(forceSsl);
 
 // Passport Config
 require('./config/passport')(passport);

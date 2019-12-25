@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const json = require("../public/data/taskData.json");
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+var forceSsl = require('force-ssl-heroku');
+
+var app = express();
+router.use(forceSsl);
 
 // Welcome Page
 router.get("/", (req, res) => res.sendFile("index.html"));
