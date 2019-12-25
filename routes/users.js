@@ -4,12 +4,8 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 // Load User model
 const User = require('../models/User');
-var forceSsl = require('force-ssl-heroku');
 
 const { forwardAuthenticated } = require('../config/auth');
-
-
-router.use(forceSsl);
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
