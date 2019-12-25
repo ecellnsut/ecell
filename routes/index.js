@@ -5,10 +5,10 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 var forceSsl = require('force-ssl-heroku');
 
 var app = express();
-router.use(forceSsl);
+app.use(forceSsl);
 
 // Welcome Page
-router.get("/", (req, res) => res.sendFile("index.html"));
+app.get("/", (req, res) => res.sendFile("index.html"));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
