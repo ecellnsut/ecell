@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Esummit '20</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/owl.css">
+
+  <style>
+    .team {
+      margin: 80px 0;
+      padding-bottom: 10px;
+      background: white;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
+      margin-right: 15px;
+      cursor: all-scroll;
+    }
+
+    .team .cover .overlay {
+      height: 250px;
+      padding-top: 60px;
+      opacity: 0;
+      background: rgba(0, 168, 255, 0.9);
+      -webkit-transition: opacity 0.45s ease;
+      transition: opacity 0.45s ease;
+    }
+
+    #team {
+      margin-bottom: 100px;
+    }
+
+    .team:hover .cover .overlay {
+      opacity: 1;
+    }
+
+    .team .avatar {
+      position: relative;
+      z-index: 2;
+      margin-top: -60px;
+      border-radius: 50%;
+      width: 140px;
+    }
+
+    .team .title {
+      margin: 50px 0;
+    }
+
+    .container1 {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 768px) {
+      .container1 {
+        width: 750px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container1 {
+        width: 970px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container1 {
+        width: 1170px;
+      }
+    }
+
+    .team img {
+      display: inline;
+    }
+
+    .team h4,
+    h5 {
+      color: #333;
+      margin: 10px;
+    }
+
+    .team h4 {
+      font-size: 1.5rem;
+    }
+
+    .team h5 {
+      font-size: 1.3rem;
+    }
+  </style>
+
+  <style>
+    /* Nav Bar */
+    .nav {
+      height: 80px;
+      width: 100% !important;
+      background-color: #1f1f1f;
+      padding-top: 20px;
+
+    }
+
+    .nav>.nav-header {
+      display: inline;
+    }
+
+    .nav>.nav-header>.nav-title {
+      display: inline-block;
+      font-size: 22px;
+
+      padding: 10px 10px 10px 10px;
+    }
+
+    .nav>.nav-btn {
+      display: none;
+    }
+
+    .nav>.nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav>.nav-links>a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav>.nav-links>a:hover {
+      background-color: #232323;
+    }
+
+    .nav>#nav-check {
+      display: none;
+    }
+
+    /* Nav Bar media Queries */
+
+    @media (max-width:680px) {
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid white;
+      }
+
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #232323;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 80px;
+        left: 0px;
+      }
+
+      .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+      }
+
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(200vh);
+        overflow-y: auto;
+      }
+    }
+  </style>
+
+  <style>
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-facebook {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      background: black;
+      color: white;
+      width: 50px;
+    }
+
+    .fa-envelope {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 50px;
+      background: black;
+      color: white;
+    }
+
+    .fa-linkedin {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 50px;
+      background: black;
+      color: white;
+    }
+
+    .fa-instagram {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 40px;
+      background: black;
+      color: white;
+    }
+
+    .footer-nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    .main-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-footer {
+      flex: 1;
+      margin: 0 auto;
+      margin-top: 2em;
+      
+      flex-direction: column;
+    }
+  </style>
+
+<style>
+  
+    @media (max-width: 768px) {
+      #footer1{
+        min-height: 590px;
+      }
+    }
+
+</style>
+
+<style>
+
+</style>
+
+</head>
+
+
+    @media (max-width: 768px) {
+      #footer1{
+        min-height: 590px;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <header class="main-header">
+    <div class="nav">
+      <input type="checkbox" id="nav-check">
+      <!-- <div class="nav-header">
+        <div class="nav-title">
+            <img class="esummitlogo" src="./img/logos/esummit logo final.png" />
+
+          </a>
+        </div>
+      </div> -->
+      <div class="nav-btn" style="padding-top: 40px;">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="#event">EVENTS</a>
+    
+        <a href="#team">TEAM</a>
+
+        <a href="#footer1" class="accent-link">CONTACT</a>
+      </div>
+    </div>
+  </header>
+  <!-- <div style="background-color: #0e0e11;">
+    <br><br><br><br><br><br><br><br>
+  </div> -->
+
+  <!-- Body -->
+  <main>
+    <section class="intro-section" style="background: #1f1f1f; padding:0;">
+      <!-- <div class="intro-text-wrapper">
+        <h1 class="intro-text accent-text">ESUMMIT '20</h1>
+        <h3 class="intro-sub-text">By eCell NSUT</h3>
+        <p class="intro-para">7-8 FEBRUARY</p>
+        <a href="#event" class="scroll-link">Explore Events </a>
+      </div> -->
+      <!-- <div class="intro-image-wrapper">
+      </div> -->
+      <img src="http://www.ecellnsut.com/images/blog/comingsoon.png" style="width: 100%; max-height: 800px; height: auto">
+    </section>
+    <section class="about-us">
+      <div class="about-us-wrapper">
+        <!-- <div class="image-wrapper"> -->
+
+        </div>
+        <div class="our-info-wrapper">
+          <h1 class="accent-text">What is ESummit?</h1>
+          <p class="our-info" style="font-size: 24px;">
+            Entrepreneurship Summit is the brainchild of E-Cell, NSUT. Aiming
+            at inculcation and development the very spirit of entreneurship,
+            eCell NSUT comes up with its annual affair to stir an essence of
+            teamwork and synergy in the masses. We believe that, for the
+            students to develop in an all around manner, it becomes absilutly
+            imperative to concoct them for the competitive corporate world.
+          </p>
+        </div>
+      </div>
+      <div class="timer-container">
+        <h1 id="head">Countdown to Event: </h1>
+        <ul class="timer">
+          <li><span id="days"></span>days</li>
+          <li><span id="hours"></span>Hours</li>
+          <li><span id="minutes"></span>Minutes</li>
+          <li><span id="seconds"></span>Seconds</li>
+        </ul>
+      </div>
+    </section>
+    <section class="events-section" id="event">
+      <h1 class="events-title accent-text">
+        <span class="stroke-text-white">Explore </span>Events
+      </h1>
+      <div class="event-card-wrapper">
+        <div class="event-card">
+          <div class="event-info">
+            <h2 class="event-title accent-text">Bellwether</h2>
+
+            <p class="event-tagline">The perfect manager</p>
+            <p class="event-desc">
+              Bellwether: The Perfect Manager is an game designed to
+              push you out of your comfort zone and challenge you to
+              think outside the box. Get your blood pumping by
+              participating in an event unlike any other and battle the
+              odds to emerge victorious!As the name suggests, this
+              game is prescribed for all those who believe that their
+              managerial skills are up to the par to battle it out in an
+              intellectually stimulating environment.
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+             <a href="./bellwether.html" style="text-decoration: none; color: inherit;">Register</a>
+            </button>
+          </div>
+          <div class="event-img-wrapper">
+           
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image informalevents" />
+          </div>
+          <div class="event-info">
+            <h2 class="event-title accent-text">Informal Events</h2>
+            <p class="event-tagline">Take break from mundane formalness , come be the informal you</p>
+            <p class="event-desc">
+              Formality is not everyone's cup of tea. Sophistication and
+              flips do not lie in everyone's appeal radius. Hence, to
+              quench the entrepreneurial thirst of the fun loving squad,
+              eSummit, 2017 will hosted an exquisite amalgamation of
+              both in its Informal Event. A slew of fun-filled events –
+              Selfie Jugaad, Minute To Win It, Beg Borrow Steal
+              and more.
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./informal events.html" style="text-decoration: none; color: inherit;">Register</a>
+             </button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-info">
+            <h2 class="event-title accent-text">Instaseed</h2>
+            <p class="event-tagline">10minutes , 10 teams, millions at stake and infinite enthusiasm.</p>
+            <p class="event-desc">
+              Persuading an investor is the first step to execute a plan.
+              With only 10 precious minutes in hand and the clock
+              ticking, not everyone is able to get an affirmative result.
+              Instaseed- The one stop where startups geared up to
+              achieve the ever elusive financial backing worth 10
+              Million in 10 Minutes.
+              
+            </p>
+            <button type="submit" class="register-button " style="display: none;">
+              <a href="./instaseed.html" style="text-decoration: none; color: inherit;">Register</a>
+             </button>
+          </div>
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image instaseed" />
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image mockstonks" />
+          </div>
+          <div class="event-info">
+
+            <h2 class="event-title accent-text">Invest-o-Preneur</h2>
+            <p class="event-tagline">Bid it to Win it</p>
+            <p class="booom"><br><br></p>
+
+            <p class="event-desc">
+              The key to making money in stocks is not to get
+              intimidated by them. This competition provides that very
+              opportunity to participants to be fearless and to step in
+              the shoes of an investor to face the wrath of the ever
+              and suddenly changing market conditions and thereby,
+              showcasing their financial awareness, along with the
+              knowledge of portfolio management.
+              
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./Invest-o-Preneur.html" style="text-decoration: none; color: inherit;">Register</a>
+             </button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-info">
+            <h2 class="event-title accent-text">Panel Discussion</h2>
+            <p class="event-tagline">An idea stands futile unless it is talked upon, discussion stands null if it's not worked upon. </p>
+            <p class="booom"><br></p>
+            <p class="event-desc">
+        
+
+              And This February, eCell NSUT, brings a Platform to convocate for you all - Panel Discussion, through the series of the event called- E-Summit. 
+              
+              It's not Arnab, the times now guy, shouting all over, that you want to hear from, but it would definitely be our prestigious and talented pool of speakers who will give their insights to the audience and discuss the collaboration of their ideas and their industry's reality for all.
+              
+              
+              Those who participate and attend the Panel discussion will not only gain important insights from the people with actual business acumen but would also have an edge with those whom they wish to compete within the future.
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./Panel Discussion.html" style="text-decoration: none; color: inherit;">Register</a>
+             </button>
+          </div>
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image paneldiscussion" />
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image speakersession" />
+          </div>
+          <div class="event-info">
+            <h2 class="event-title accent-text">Speaker Session</h2>
+            <p class="event-tagline">If your actions inspire others to dream more, learn more, do more and become more, you are a leader.</p>
+            <p class="event-desc">
+              Informative, engaging and, most of all, extremely inspiring speaker sessions .
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./Speaker Session.html" style="text-decoration: none; color: inherit;display: none;">Register</a>
+             </button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-info">
+            <h2 class="event-title accent-text">Startup Combat</h2>
+            <p class="event-tagline">Pitch the best to beat the rest</p>
+            <p class="event-desc">
+              The startling event which will test creativity,
+              feasibility and originality while detangling your
+              entrepreneurial skills to awaken the entrepreneur
+              within you! Startup Combat- A battle of the Startups
+              worth 10 Million in 10 Minutes.
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./Startup Combat.html" style="text-decoration: none; color: inherit;display: none;">Register</a>
+             </button>
+          </div>
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image startupcombat" />
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image unravel" />
+          </div>
+          <div class="event-info">
+            <h2 class="event-title accent-text">Comedy Night</h2>
+            <p class="event-tagline">The case study competition</p>
+            <p class="event-desc">
+              A tinge of MUN amalgamated with the wondrous
+              concept of entrepreneurship is what the event was all
+              about. Entering into the shoes of a company owner, one
+              had to deal with the problems arising with different
+              countries in a strategic way. Global Strategy- A crossdisciplinary contest of ‘global’ proportions.
+              
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./comedy night.html" style="text-decoration: none; color: inherit;display: none;">Register</a>
+             </button>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-info">
+            <h2 class="event-title accent-text">DEC</h2>
+            <p class="event-tagline">Pitch the best to beat the rest</p>
+            <p class="event-desc">
+              The startling event which will test creativity,
+              feasibility and originality while detangling your
+              entrepreneurial skills to awaken the entrepreneur
+              within you! Startup Combat- A battle of the Startups
+              worth 10 Million in 10 Minutes.
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./DEC.html" style="text-decoration: none; color: inherit;display: none;">Register</a>
+             </button>
+          </div>
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image startupcombat" />
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="event" class="event-image unravel" />
+          </div>
+          <div class="event-info">
+            <h2 class="event-title accent-text">Unravel</h2>
+            <p class="event-tagline">The case study competition</p>
+            <p class="event-desc">
+              A tinge of MUN amalgamated with the wondrous
+              concept of entrepreneurship is what the event was all
+              about. Entering into the shoes of a company owner, one
+              had to deal with the problems arising with different
+              countries in a strategic way. Global Strategy- A crossdisciplinary contest of ‘global’ proportions.
+              
+            </p>
+            <button type="submit" class="register-button" style="display: none;">
+              <a href="./Unravel.html" style="text-decoration: none; color: inherit;display: none;">Register</a>
+             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--
+
+    <section class="speakers-section" id="speaker">
+      <h1 class="speaker-title">
+        <span class="stroke-text-black">Past</span> Speakers
+      </h1>
+      <div class="speakers-wrapper">
+
+        <div class="speakercard">
+          <h3 class="speaker-name">&nbsp&nbsp&nbspVipul<br>Aggarwal</h3>
+          <p class="speaker-info line-1">Co-Founder</p>
+          <p class="speaker-info line-2">Cricnwin</p>
+
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">&nbsp&nbspRajesh <br>&nbsp&nbsp&nbsp&nbspAnd<br> Shubham</h3>
+          <p class="speaker-info line-1">Founders</p>
+          <p class="speaker-info line-2">Sadak Chhap <br>&nbspProductions</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">Sam Alsrore</h3>
+          <p class="speaker-info line-1">Advisor</p>
+          <p class="speaker-info line-2">LinkedIn UK</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">Sanchiit Sethi</h3>
+          <p class="speaker-info line-1">Founder</p>
+          <p class="speaker-info line-2">Stayuncle</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPrashant &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTandon</h3>
+          <p class="speaker-info line-1">Founder</p>
+          <p class="speaker-info line-2">1mg.com</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">Manav Thadani</h3>
+          <p class="speaker-info line-1">Founder</p>
+          <p class="speaker-info line-2">Hotelivate</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBhavesh &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspManglani</h3>
+          <p class="speaker-info line-1">Co-Founer</p>
+          <p class="speaker-info line-2">Delhivery</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">Ajay Srivastava</h3>
+          <p class="speaker-info line-1">CTO</p>
+          <p class="speaker-info line-2">Knowlarity</p>
+        </div>
+        <div class="speakercard">
+          <h3 class="speaker-name">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDinesh &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomagai</h3>
+          <p class="speaker-info line-1">VP Operations</p>
+          <p class="speaker-info line-2">WoW Momos</p>
+        </div>
+    </section>
+    <section class="associations-section" id="sponsors">
+      <h1 class="association-title">Associations</h1>
+      <div class="asso-card-wrapper">
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+        <div class="asso-card"></div>
+
+      </div>
+    </section>
+  -->
+
+
+
+    <section class="section gray-bg" id="team" style="padding: 40px 0;">
+      <h1 class="speaker-title" style="text-align: center;">
+        <span class="stroke-text-black">Our</span> Team
+      </h1>
+      <div class="container1">
+        <div class="owl-carousel owl-theme" style="padding-right:0px;padding-left:0px;">
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/1.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Karan Jain</h4>
+                <h5 class="muted regular"><b>Cheif Convener</b></h5><a
+                  href="https://www.linkedin.com/in/karan-jain-0442b1150/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/2.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Aayush Yadav</h4>
+                <h5 class="muted regular"><b>Co-Convener</b></h5><a
+                  href="https://www.linkedin.com/in/aayush-yadav-28003b169/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/3.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Amartya Palash</h4>
+                <h5 class="muted regular"><b>Co-Convener</b></h5><a href="https://www.linkedin.com/in/amartya1609/"><i
+                    class="fa fa-linkedin fa-2x" target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/4.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Jahanavi Mishra</h4>
+                <h5 class="muted regular"><b>Director of Operations</b></h5><a
+                  href="https://www.linkedin.com/in/jahanavim/"><i class="fa fa-linkedin fa-2x" target="_blank"></i></a>
+              </div>
+            </div>
+          </div> -->
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/5.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Ekas Luthra</h4>
+                <h5 class="muted regular"><b>General Secretary</b></h5><a
+                  href="https://www.linkedin.com/in/ekas-luthra-7b3443150/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/11.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Chaitanya</h4>
+                <h5 class="muted regular"><b>Director of Tech</b></h5><a
+                  href="https://www.linkedin.com/in/arorachaitanya/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/6.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Lovely Chopra</h4>
+                <h5 class="muted regular"><b>Secretary</b></h5><a
+                  href="https://www.linkedin.com/in/lovely-chopra-91b722151/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/7.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Achin Verma</h4>
+                <h5 class="muted regular"><b>Sponsorship Head</b></h5><a
+                  href="https://www.linkedin.com/in/achin-verma-069a82134/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/8.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Vansh</h4>
+                <h5 class="muted regular"><b>PR Head</b></h5><a
+                  href="https://www.linkedin.com/in/vansh-batra-a5a193190/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/9.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Nimisha Jain</h4>
+                <h5 class="muted regular"><b>Marketing Head</b></h5><a
+                  href="https://www.linkedin.com/in/nimisha-jain-bb81b3160/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/10.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Abhinav Kumar</h4>
+                <h5 class="muted regular"><b>Treasurer</b></h5><a
+                  href="https://www.linkedin.com/in/abhinav-kumar-b72b49145/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div> -->
+          <div class="item" style="width: 100%;">
+            <div class="team text-center" style="text-align: center;">
+              <div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;"></div><img
+                class="avatar" src="img/team/12.jpg" alt="Team Image">
+              <div class="title">
+                <h4>Arjun</h4>
+                <h5 class="muted regular"><b>Director of Tech</b></h5><a
+                  href="https://www.linkedin.com/in/arjun-singh-b18b54150/"><i class="fa fa-linkedin fa-2x"
+                    target="_blank"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+<iframe id="footer1" src="./footer.html" width="100%" height="340vh">
+
+</iframe>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+
+  <script type="text/javascript">
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+      loop: false,
+      margin: 10,
+      navigation: true,
+      autoPlay: true,
+      items: 4,
+      navigationText: [
+        "<i class='fa fa-chevron-left'></i>",
+        "<i class='fa fa-chevron-right'></i>"
+      ],
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 4
+        }
+      }
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+
+  <script>
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let countDown = new Date('Feb 06, 2020 00:00:00').getTime(),
+      x = setInterval(function () {
+
+        let now = new Date().getTime(),
+          distance = countDown - now;
+
+        document.getElementById('days').innerText = Math.floor(distance / (day)),
+          document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        //if (distance < 0) {
+        //  clearInterval(x);
+        //  'IT'S MY BIRTHDAY!;
+        //}
+
+      }, second)
+  </script>
+</body>
+
+</html>
