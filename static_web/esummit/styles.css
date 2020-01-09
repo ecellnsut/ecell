@@ -416,6 +416,10 @@ li span {
 
 /* Speaker section styles  */
 
+.speaker-link {
+  text-decoration: none;
+}
+
 .speaker-title {
   font-family: Litsans;
   font-size: 2.5em;
@@ -496,7 +500,7 @@ li span {
 .speakercard:hover {
   filter: none;
   box-shadow: 0 3px 4px 0 black;
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 /* Associations styles */
@@ -693,6 +697,10 @@ li span {
   margin-bottom: 10px;
 }
 
+.video {
+  margin-top: 2em;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 1040px) {
@@ -833,10 +841,15 @@ li span {
   } */
 
   /* About us styles */
-  /* .about-us-wrapper {
+   .about-us-wrapper {
     flex-direction: column;
     flex: 1;
-  } */
+  } 
+	.video {
+    width: 90vw;
+    height: 250px;
+  }
+	
 
   /* .image-wrapper {
     order: 2;
@@ -931,6 +944,25 @@ li span {
     transition: 0.2s transform ease-in-out;
   }
 
+  .speaker-name {
+    font-size: 0.9em;
+    justify-content: center;
+    display: inline-flexbox;
+    flex-wrap: wrap;
+  }
+  
+  .speaker-info {
+    font-size: 0.7em;
+
+  }
+
+  .long-speaker{
+    font-size: 0.8em;
+  }
+
+  .long-line {
+    font-size: 0.6em;
+  }
   /* Association styles  */
 
   .asso-card-wrapper {
