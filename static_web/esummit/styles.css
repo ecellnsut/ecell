@@ -719,6 +719,10 @@ li span {
   .booom {
     display: initial;
   }
+.event-tagline{
+    font-size: 19px;
+  }
+
   
 
   .about-us::before,
