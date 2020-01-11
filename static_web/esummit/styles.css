@@ -484,8 +484,8 @@ li span {
   background-size: cover;
   transition: 0.2s transform ease-in-out;
 }
-
 .speaker-name {
+  transform: translateY(90px);
   font-size: 1.4em;
   justify-content: center;
   display: inline-flexbox;
@@ -493,10 +493,12 @@ li span {
 }
 
 .speaker-info {
+ transform: translateY(60px);
   color: white;
   margin: 0.2em 0;
   font-size: 1.1em;
 }
+
 .speakercard:hover {
   filter: none;
   box-shadow: 0 3px 4px 0 black;
@@ -754,6 +756,15 @@ li span {
     bottom: -70px;
   }
 
+  .speaker-name {
+    transform: translateY(70px);
+
+  }
+  
+  .speaker-info {
+   transform: translateY(60px);
+
+  
   .about-us,
   .events-section,
   .speakers-section,
