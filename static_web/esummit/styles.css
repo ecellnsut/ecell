@@ -313,7 +313,8 @@ li span {
 .events-title {
   font-family: Litsans;
   font-size: 2.5em;
-  margin: 1em 0 2em;
+  text-align: center;
+  
 }
 
 .events-section {
@@ -533,13 +534,31 @@ li span {
   background-blend-mode: multiply;
   margin: 1.2em;
   background-size: cover;
-  transition: 0.2s transform ease-in-out;
+  transition: 0.1s transform ease-in-out;
   border-radius: 10%;
+}
+
+.investorcard2 {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: #444141d3;
+  background-image: url(https://www.icmif.org/sites/default/files/styles/inline_left/public/Ross%20Dawson%20news.jpg?itok=b_xYKzNZ);
+  color: #e68625;
+  background-blend-mode: multiply;
+  margin: 1.2em;
+  background-size: cover;
+  transition: 0.2s transform ease-in-out;
+  border-radius: 50%;
 }
 
 
 .investor-name {
-  transform: translateY(75px);
+  transform: translateY(60px);
   font-size: 0.9em;
   justify-content: center;
   display: inline-flexbox;
@@ -547,7 +566,7 @@ li span {
 }
 
 .investor-info {
-  transform: translateY(60px);
+  transform: translateY(40px);
   color: white;
   margin: 0.2em 0;
   font-size: 0.6em;
@@ -1111,6 +1130,22 @@ li span {
 
   .investorcard {
     width: 30vw;
+    height: 26.3vh;
+    display: inline-flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444141d3;
+    background-position-x: -60px;
+    color: #e68625;
+    background-blend-mode: multiply;
+    margin: 12px;
+    background-size: cover;
+    transition: 0.2s transform ease-in-out;
+  }
+  
+  .investorcard2 {
+   
     height: 26.3vh;
     display: inline-flexbox;
     flex-direction: column;
