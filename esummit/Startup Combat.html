@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Event 1</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10em;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1,
+    h2 {
+      font-family: Litsans;
+      color: #e68625;
+    }
+
+    .btn {
+      color: white;
+      background-color: #1762a7;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.2rem;
+    }
+
+    .btn:hover {
+      background-color: #2180d8;
+    }
+
+    .btn:focus {
+      background-color: #2796ff;
+    }
+
+    .login-form {
+      background-color: #232323;
+      width: 50vw;
+      max-width: 50%;
+      padding: 2rem 4rem;
+      border-radius: 20px;
+    }
+
+    .email {
+      margin-top: 1em;
+    }
+
+    .input-group {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group-last {
+      margin-bottom: 0;
+    }
+
+    .input-group label {
+      margin-bottom: 0.5rem;
+    }
+
+    .input-group input {
+      outline: none;
+      background: none;
+      border: 1px solid #2e3852;
+      font-size: 1em;
+      padding: 0.5em;
+      color: inherit;
+      border-radius: 5px;
+    }
+
+    .input-group input:focus {
+      border-color: #e68625;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        padding: 1em;
+      }
+
+      .login-form {
+        padding: 2em 2.5em;
+        width: 80vw;
+        max-width: 90%;
+      }
+    }
+  </style>
+
+  <style>
+    /* Nav Bar */
+    .nav {
+      height: 80px;
+      width: 100% !important;
+      background-color: #0e0e11;
+      padding-top: 20px;
+
+    }
+
+    .nav>.nav-header {
+      display: inline;
+    }
+
+    .nav>.nav-header>.nav-title {
+      display: inline-block;
+      font-size: 22px;
+
+      padding: 10px 10px 10px 10px;
+    }
+
+    .nav>.nav-btn {
+      display: none;
+    }
+
+    .nav>.nav-links {
+      display: inline;
+      float: right;
+      font-size: 18px;
+    }
+
+    .nav>.nav-links>a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav>.nav-links>a:hover {
+      background-color: #232323;
+    }
+
+    .nav>#nav-check {
+      display: none;
+    }
+
+    /* Nav Bar media Queries */
+
+    @media (max-width:680px) {
+      .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+
+      .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+      }
+
+      .nav>.nav-btn>label:hover,
+      .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid white;
+      }
+
+      .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #232323;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 100px;
+        left: 0px;
+      }
+
+      .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+      }
+
+      .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+      }
+
+      .nav>#nav-check:checked~.nav-links {
+        height: calc(50vh);
+        overflow-y: auto;
+      }
+    }
+  </style>
+
+  <style>
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+    .fa-facebook {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      background: black;
+      color: white;
+      width: 50px;
+    }
+
+    .fa-envelope {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 50px;
+      background: black;
+      color: white;
+    }
+
+    .fa-linkedin {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 50px;
+      background: black;
+      color: white;
+    }
+
+    .fa-instagram {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      margin: 2.5px 1px;
+      border-radius: 50%;
+      width: 40px;
+      background: black;
+      color: white;
+    }
+
+    .footer-nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      padding: 1rem;
+    }
+
+    .main-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-footer {
+      flex: 1;
+      margin: 0 auto;
+      margin-top: 2em;
+      height: 100px;
+      flex-direction: column;
+    }
+  </style>
+
+</head>
+
+<body style="background-color: #0e0e11;">
+  <header class="main-header">
+    <div class="nav">
+      <input type="checkbox" id="nav-check">
+      <div class="nav-header">
+        <div class="nav-title">
+          <a class="brand-logo">
+            <img src="./img/logos/esummit logo final.png" style="height: auto; width: 190px;transform: translateY(-15px);"/>
+          </a>
+        </div>
+      </div>
+      <div class="nav-btn" style="padding-top: 40px;">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="./index.html">HOME</a>
+        <a href="./index.html#event" class="accent-link">EVENTS</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="event-title">Startup Combat</h1>
+    <p class="event-description">
+     A war between different ideas of startups.<br>
+     Startup combat--- pitch the best to beat the rest
+    </p>
+    <button type="submit" class="register-button" style="  ;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScq0UKNv2EjQYhjU_0QXkWzAzJUn6k-Tz5zUGMLJlD3RmBFQg/viewform?usp=sf_link" style="text-decoration: none; color: inherit;  ;">Know More</a>
+     </button>
+    
+  </main>
+
+  <footer id="foot" class="main-footer footer-section" style="
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;">
+    <div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="https://www.facebook.com/ecell.nsut/" class="fa fa-facebook"></a></li>
+          &nbsp;
+          <li><a href="mailto:ecell.care@gmail.com" class="fa fa-envelope"></a></li>
+          &nbsp;
+          <li><a href="https://in.linkedin.com/company/ecell-nsit-the-entrepreneurship-cell-of-nsit-"
+              class="fa fa-linkedin"></a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="coves-font" style=" margin-top:1em;">Ecell NSUT All Rights Reserved</p>
+  </footer>
+</body>
+
+</html>
